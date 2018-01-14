@@ -1,13 +1,16 @@
 %{!?tcl_version: %define tcl_version %(echo 'puts $tcl_version' | tclsh)}
 %{!?tcl_sitelib: %define tcl_sitelib %{_datadir}/tcl%{tcl_version}}
 
+%global commit 7bb9e94fe4632757e1e23468c59112a53f217861
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+
 Summary: Collection of widgets and other packages for Tk
 Name: tklib
-Version: 0.6
-Release: 1%{?dist}
+Version: 6.0.1
+Release: %{shortcommit}.1%{?dist}
 License: BSD
 Group: Development/Libraries
-Source: http://core.tcl.tk/tklib/tarball/tklib-0.6.tar.gz
+Source: https://github.com/tcltk/%{name}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 URL: http://core.tcl.tk/tklib/
 BuildArch: noarch
 Requires: tcl(abi) = 8.6 tk tcllib
@@ -59,6 +62,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/diagram-viewer
 
 %changelog
+* Sun Jan 14 2018 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 6.0.1-1
+- Changed source to https://github.com/tcltk/tklib
+- Updated to version 6.0.1
+
 * Fri Jul 21 2017 Nicholas Kudriavtsev <nkudriavtsev@gmail.com> - 0.6-1
 - Changed source to http://core.tcl.tk/tklib
 - Updated to version 0.6
