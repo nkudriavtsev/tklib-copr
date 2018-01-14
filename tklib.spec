@@ -10,7 +10,7 @@ Version: 6.0.1
 Release: %{shortcommit}.1%{?dist}
 License: BSD
 Group: Development/Libraries
-Source: https://github.com/tcltk/%{name}.git/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
+Source: https://github.com/tcltk/tklib.git/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 URL: http://core.tcl.tk/tklib/
 BuildArch: noarch
 Requires: tcl(abi) = 8.6 tk tcllib
