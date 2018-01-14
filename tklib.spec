@@ -23,7 +23,7 @@ Tk utility functions and widgets useful to a large collection of Tcl/Tk
 programmers.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{commit}
 # Remove some execute permission bits on files that aren't executable
 # to suppress some rpmlint warnings.
 chmod a-x modules/plotchart/*.tcl
